@@ -1,13 +1,277 @@
 <!DOCTYPE html>
-<html xmlns:th="htpps://www.thymeleaf.org" lang="es">
+<html xmlns:th="https://www.thymeleaf.org" lang="es">
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Inicio</title>
 		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+		<link th:rel="stylesheet" th:href="@{/css/stylesIndex.css}"> 
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" >
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
+	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 	</head>
 <body>
-	<h1>Hola mundo</h1>
+     <header id="header">
+        
+        <div class="container-fluid py-4" id="#"> 
+	         <div class="row mx-0 justify-content-center">
+	         	  <div class="col-12 col-lg-3 col-sm-12 col-md-4 d-flex justify-content-center">
+	           		<a href="#"><img alt="foto-logo-fi" src="/images/logo-fi-unju.png" class="img-logo img-fluid"></a>
+	         	 </div>
+		          <div class="col-12 col-lg-8 col-sm-12 col-md-8 d-flex justify-content-center align-items-center flex-column">
+		            <h3>52 años</h3>
+		            <h5 class="text-center">Constribuyendo al crecimiento de Jujuy</h5>
+		          </div>
+	        </div>
+        </div> 
+
+		<nav class="navbar navbar-expand-lg bg-body-transparent py-lg-2">
+			<div class="container-fluid">
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-evenly" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item me-5"><a class="nav-link active" aria-current="page" href="#">Inicio</a></li>
+						<li class="nav-item me-5"><a class="nav-link" href="#">Acerca de</a></li>
+						<li class="nav-item dropdown me-5">
+				          <a class="nav-link dropdown-toggle" href="#Carreras" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				            Carreras
+				          </a> 
+				          <ul class="dropdown-menu">
+				            <li><h6 class="dropdown-header">Carreras de Grado</h6></li>
+				            <li><a class="dropdown-item" href="#">Ing. Química</a></li>
+				            <li><a class="dropdown-item" href="#">Ing. de Minas</a></li>
+				            <li><a class="dropdown-item" href="#">Ing. Industrial</a></li>
+				            <li><a class="dropdown-item" href="#">Ing. Informática</a></li>
+				            <li><a class="dropdown-item" href="#">Lic. en Sistemas</a></li>
+				            <li><a class="dropdown-item" href="#">Lic. en Tecnología de Alimentos</a></li>
+				            <li><a class="dropdown-item" href="#">Lic. en Ciencias Geológicas</a></li>
+				            <li><hr class="dropdown-divider"></li>
+				            <li><h6 class="dropdown-header">Carreras de Pre-Grado</h6></li>
+				            <li><a class="dropdown-item" href="#">Analista Programador Univ.</a></li>
+				            <li><a class="dropdown-item" href="#">Tec. Univ. en Diseño Integral de Videojuegos</a></li>
+				            <li><a class="dropdown-item" href="#">Tec. Univ. en Perforaciones</a></li>
+				          	<li><hr class="dropdown-divider"></li>
+				          	<li><h6 class="dropdown-header">Convenio UTN</h6></li>
+				            <li><a class="dropdown-item" href="#">Lic. en Biotecnología</a></li>
+				            <li><a class="dropdown-item" href="#">Lic. en Química</a></li>
+				            <li><a class="dropdown-item" href="#">Bioquímica</a></li>
+				            <li><a class="dropdown-item" href="#">Farmacia</a></li>
+				          </ul>
+			        	</li>
+			        	<li class="nav-item me-5"><a class="nav-link" href="#">Noticias</a></li>
+						<li class="nav-item"><a class="nav-link" href="#">Contactos</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+       </header>
+       
+          <main>
+        
+          
+		<div id="carouselExampleCaptions" class="carousel slide">
+			<div class="carousel-indicators">
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="/images/carousel-1.png" class="d-block w-100" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+						<h3>Celebrando 52 Años de Logros</h3>
+						<p>¡Feliz Aniversario, Facultad de Ingeniería</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="/images/carousel-2.png" class="d-block w-100" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+						<h3>Semana de la Mineria</h3>
+						<p>Explorando los desafíos y oportunidades en la industria minera</p>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<img src="/images/carousel-3.png" class="d-block w-100" alt="...">
+					<div class="carousel-caption d-none d-md-block">
+						<h3>Construyendo un futuro mejor</h3>
+						<p>Formamos líderes innovadores y comprometidos.</p>
+					</div>
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+    
+       <section id="facultad">
+       	  <div class="container">
+       	    <h1>SOMOS</h1>
+       	  	 <div class="row">
+       	  	 	<div class="col-lg-6">
+       	  	 	   <img alt="" src="" class="img-fluid">
+       	  	 	   <h2>Union y Solidaridad</h2>
+       	  	 	   <p>Trabajamos juntos para impulsar el progreso educativo y social en nuestra comunidad</p>
+       	  	 	</div>
+       	  	 	<div class="col-lg-6">
+       	  	 	   <img alt="" src="" class="img-fluid">
+       	  	 	   <h2>Compromiso e Innovación</h2>
+       	  	 	   <p>Impulsamos el progreso educativo mediante la colaboración</p>
+       	  	 	</div>
+       	  	 	<div class="col-lg-6">
+       	  	 	   <img alt="" src="" class="img-fluid">
+       	  	 	   <h2>Creciento y Excelencia</h2>
+       	  	 	   <p>Nuestra constancia define nuestra autenticidad</p>
+       	  	 	</div>
+       	  	 </div>
+       	  </div>
+       </section>
+       
+       <section id="noticias">
+         
+       	 	<div class="container">
+       	 	  <h2>Noticias Recientes</h2>
+	       	 	  <div class="row">
+		       	 	  	<div class="card col-lg-3" style="width: 18rem;">
+							  <img src="..." class="card-img-top" alt="...">
+							  <div class="card-body">
+								    <h5 class="card-title">Card title</h5>
+								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								    <a href="#" class="btn btn-primary">Go somewhere</a>
+							  </div>
+						</div>
+						<div class="card col-lg-3" style="width: 18rem;">
+							  <img src="..." class="card-img-top" alt="...">
+							  <div class="card-body">
+								    <h5 class="card-title">Card title</h5>
+								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								    <a href="#" class="btn btn-primary">Go somewhere</a>
+							  </div>
+						</div>
+	       	 	  </div>
+	       	 		
+	       	 	  <div class="row">
+						<div class="card col-lg-3" style="width: 18rem;">
+							  <img src="..." class="card-img-top" alt="...">
+							  <div class="card-body">
+								    <h5 class="card-title">Card title</h5>
+								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								    <a href="#" class="btn btn-primary">Go somewhere</a>
+							  </div>
+						</div>
+						<div class="card col-lg-3" style="width: 18rem;">
+							  <img src="..." class="card-img-top" alt="...">
+							  <div class="card-body">
+								    <h5 class="card-title">Card title</h5>
+								    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								    <a href="#" class="btn btn-primary">Go somewhere</a>
+							  </div>
+						</div>
+				 </div>
+       	 	</div>
+       </section>
+     
+     
+     </main>
+     
+     <aside>
+		   <div class="container-fluid">
+			    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasAside" aria-controls="offcanvasAside">
+	                <span class="navbar-toggler-icon"></span>
+			    </button>
+		   </div>
+
+			<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasAside" aria-labelledby="offcanvasAsideLabel">
+			    <div class="offcanvas-header">
+			        <h5 class="offcanvas-title" id="offcanvasAsideLabel">Aside</h5>
+			        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			    </div>
+			    <div class="offcanvas-body">
+			        <ul class="nav flex-column">
+			            <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+			            <li class="nav-item"><a class="nav-link" href="#">Acerca de</a></li>
+			            <li class="nav-item"><a class="nav-link" href="#">Carreras</a></li>
+			            <li class="nav-item"><a class="nav-link" href="#">Noticias</a></li>
+			            <li class="nav-item"><a class="nav-link" href="#">Contactos</a></li>
+			        </ul>
+			    </div>
+			</div>
+
+        
+     </aside>
+     
+     <footer>
+        <div class="container">
+        	<div class="row">
+        		<div class="col-lg-6">
+        		    <div class="row">
+        		      	<div class="col-lg-6">
+		          			<img alt="logo" src="../static/images/logo.png">
+		        		</div>
+			        	<div class="col-lg-6"> 
+					           <h4>Links Utiles</h4>
+					           <p><a href="#terminosCondiciones">Términos y Condiciones</a></p>
+					           <p><a href="#politicaPrivacidad">Política de Privacidad</a></p>
+			      		  </div>
+        		   </div>
+        			
+	        	</div>
+	        	
+	         </div>
+	         <div class="row">
+	            <div class="col-lg-12">
+	               <div class="row">
+		            	 <div class="col-lg-6"> 
+			           		<a href="https://github.com/mili-08"><strong>By Milagro Jaquelina Martinez ❤️</strong> </a>
+			        	</div>
+			        	<div class="col-lg-6">
+				           <span><a href="https://www.instagram.com/" class="icono-footer"><i class="fa-brands fa-instagram"></i></a></span>
+				           <span><a href="https://www.facebook.com/" class="icono-footer"><i class="fa-brands fa-facebook"></i></a></span>
+				           <span><a href="https://www.tiktok.com/es" class="icono-footer" ><i class="fa-brands fa-tiktok"></i></a></span>
+		        		</div>
+		        	</div>
+	            </div>
+        	 </div>
+        </div>
+     </footer>
+    
+     
+     
+     <!--  <footer>
+	     <div>
+	        <div>
+	            <div >
+		          	<img alt="logo" src="../static/images/logo.png">
+		        </div>
+	        	<div> 
+		           <h4>Links Utiles</h4>
+		           <p><a href="#terminosCondiciones">Términos y Condiciones</a></p>
+		           <p><a href="#politicaPrivacidad">Política de Privacidad</a></p>
+	      		  </div>
+	        </div>
+	        <div >
+	            <div> 
+		           	<a href="https://github.com/mili-08"><strong>By Milagro Jaquelina Martinez ❤️</strong> </a>
+		        </div>
+	        	<div>
+		           <span><a href="https://www.instagram.com/" class="icono-footer"><i class="fa-brands fa-instagram"></i></a></span>
+		           <span><a href="https://www.facebook.com/" class="icono-footer"><i class="fa-brands fa-facebook"></i></a></span>
+		           <span><a href="https://www.tiktok.com/es" class="icono-footer" ><i class="fa-brands fa-tiktok"></i></a></span>
+	        	</div>
+	        </div>
+	     </div>
+   </footer>-->
 	
 	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
