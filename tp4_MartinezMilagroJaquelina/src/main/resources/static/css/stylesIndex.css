@@ -38,3 +38,49 @@ header {
 .dropdown-menu {
 	font-size: 0.7em;
 }
+#facultad {
+	/*background-color: #f5b7a0;*/
+	background-color: mediumslateblue;
+	
+    padding: 30px;
+    border-radius: 0 90% 90% / 0 0 41% 15%;
+    overflow: hidden;
+}
+.color1-somos {
+	background-color: coral;
+}
+.color2-somos {
+	background-color: darkslateblue;
+}
+.color1-container {
+	background-color: darkslateblue;
+    padding: 4em;
+}
+
+.color2-container {
+	background-color: coral;
+    padding: 4em;
+}
+
+.card {
+	width: 30rem;
+}
+
+.card img {
+	width: 28rem;
+	height: 18rem;
+}
+footer,.navbar, footer a, footer i {
+	background-color: darkslateblue;
+	--bs-navbar-active-color: #ffffff;
+	color:#ffffff;
+	--bs-navbar-color: #ffffff;
+}
+
+footer img {
+	width: 19em;
+}
+
+.aviso-legal {
+	align-items: self-end
+}
