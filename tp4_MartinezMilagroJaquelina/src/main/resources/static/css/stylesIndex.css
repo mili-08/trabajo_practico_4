@@ -1,0 +1,145 @@
+@charset "ISO-8859-1";
+.img-logo {
+	width: 15em;
+}
+header {
+	 font-family: "Poppins", sans-serif;
+ 	 font-weight: 500;
+ 	 color: rgb(18, 85, 130);
+ 	 background-color:  lightyellow;
+}
+.carousel-item img {
+      width: 100%;
+      height: 500px; 
+      object-fit: cover; 
+      opacity: 0.6;
+}
+.carousel-item {
+	background-color: black;
+}
+.carousel-caption {
+	  bottom: 3.25rem; 
+}
+.dropdown-menu {
+	font-size: 0.7em;
+}
+#facultad {
+	background-color: mediumslateblue;
+    padding: 30px;
+    padding-bottom: 7em;
+    border-radius: 0 97% 85% / 0 0 44% 39%;
+    overflow: hidden;
+}
+.card {
+	width: 16rem;
+    height: 18rem;
+}
+.card img {
+	width: 13rem;
+    height: 8rem;
+}
+footer,.navbar, footer a, footer i {
+	background-color: darkslateblue;
+	--bs-navbar-active-color: #ffffff;
+	color:#ffffff;
+	--bs-navbar-color: #ffffff;
+}
+footer img {
+	width: 19em;
+}
+.aviso-legal {
+	align-items: self-end;
+}
+.offcanvas {
+	--bs-offcanvas-bg: black;
+	--bs-offcanvas-bg: transparent;
+	box-shadow: -4px -4px 20px 3px rgba(255, 255, 255, 0.5);
+}
+.offcanvas-header {
+	margin-top: 3rem;
+    color: white;
+}
+.btn-close {
+	opacity: 1;
+	filter: brightness(0) invert(1);  /*Invierte el color del la x del btn-close */
+	border:2px solid white;
+}
+.img-slogan {
+	width: 20em;
+}
+.color-button {
+	background-color: darkslateblue;
+}
+.color-mision {
+	background-color: antiquewhite;
+}
+.color-mision h4 {
+	font-weight: bolder;
+    color: darkblue;
+}
+.f-row-gap {
+	row-gap: 2em;
+}
+.fac-column-gap {
+	column-gap: 4em;
+}
+
+@media (max-width: 991px) {
+   .card {
+	width: 30rem;
+    height: 22rem;
+   }
+   .card img {
+	 width: 28rem;
+     height: 15rem;
+   }
+   .fac-column-gap {
+	column-gap: 0em;
+	row-gap:2em;
+	justify-content: center;
+   }
+   footer {
+   margin-top: 6em;
+   font-size: 0.7em;
+   }
+   #mision .row {
+    row-gap: 2em;
+   }
+}
+
+@media (max-width: 768px) { 
+    .card {
+	width: 21rem;
+    height: 19rem;
+   }
+   .card img {
+	 width: 20rem;
+     height: 11rem;
+   }
+    footer img {
+      width: 10rem;
+    }
+    footer h4 {
+    font-size: 1rem;
+    }
+}
+
+@media (max-width: 575px) {
+   .card {
+	  width: 17rem;
+	  height: 19rem;
+	}
+	.card img {
+	  width: 16rem;
+	  height: 9rem;
+	}
+	.color-mision h4 {
+	  font-size: 1.5rem;
+	}
+	.img-logo {
+	  width: 7rem;
+	}
+	.img-slogan {
+	  width: 11rem;
+	}
+}
