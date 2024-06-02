@@ -1,73 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" lang="es">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Inicio</title>
-		<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
-		<link th:rel="stylesheet" th:href="@{/css/stylesIndex.css}"> 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" >
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
-	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-	</head>
+    <head data-th-replace="~{/layouts/header :: head}"></head>
 <body>
-     <header id="header">
-	        <div class="container-fluid py-4" id="#"> 
-		         <div class="row mx-0 justify-content-center">
-		         	  <div class="col-4 col-lg-5 col-sm-5 col-md-4 d-flex justify-content-center align-items-center">
-		           		<a href="#"><img alt="foto-logo-fi" src="/images/logo-fi-unju.png" class="img-logo img-fluid"></a>
-		         	 </div>
-			          <div class="col-4 col-lg-5 col-sm-5 col-md-6 d-flex justify-content-center align-items-center flex-column mt-sm-4">
-			            <img alt="foto-slogan" src="/images/slogan.png" class="img-fluid img-slogan">
-			          </div>
-		        </div>
-	        </div> 
-			<nav class="navbar navbar-expand-lg bg-body-transparent py-lg-2">
-				<div class="container-fluid">
-					<button class="navbar-toggler" type="button"
-						data-bs-toggle="collapse" data-bs-target="#navbarNav"
-						aria-controls="navbarNav" aria-expanded="false"
-						aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse justify-content-evenly" id="navbarNav">
-						<ul class="navbar-nav">
-							<li class="nav-item me-5"><a class="nav-link" aria-current="page" href="#">Inicio</a></li>
-							<li class="nav-item me-5"><a class="nav-link" href="#">Acerca de</a></li>
-							<li class="nav-item dropdown me-5">
-					          <a class="nav-link dropdown-toggle" href="#Carreras" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					            Carreras
-					          </a> 
-					          <ul class="dropdown-menu">
-					            <li><h6 class="dropdown-header">Carreras de Grado</h6></li>
-					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/perfil-y-alcance-ing-quimica" target="blank">Ing. Química</a></li>
-					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/perfil-y-alcance-ing-de-minas" target="blank">Ing. de Minas</a></li>
-					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/perfil-y-alcance-ing-industrial" target="blank">Ing. Industrial</a></li>
-					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/perfil-y-alcance-ing-informatica" target="blank">Ing. Informática</a></li>
-					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/perfil-y-alcance-lic-en-sistemas" target="blank">Lic. en Sistemas</a></li>
-					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/perfil-y-alcance-lic-en-tecn-de-los-alimentos" target="blank">Lic. en Tecnología de Alimentos</a></li>
-					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/perfil-y-alcance-lic-en-cs-geologicas" target="blank">Lic. en Ciencias Geológicas</a></li>
-					            <li><hr class="dropdown-divider"></li>
-					            <li><h6 class="dropdown-header">Carreras de Pre-Grado</h6></li>
-					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/perfil-y-alcance-analista-programador-universitario" target="blank">Analista Programador Univ.</a></li>
-					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/tecnicatura-universitaria-en-div" target="blank">Tec. Univ. en Diseño Integral de Videojuegos</a></li>
-					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/perfil-y-alcance-tec-univ-en-perforaciones" target="blank">Tec. Univ. en Perforaciones</a></li>
-					          	<li><hr class="dropdown-divider"></li>
-					          	<li><h6 class="dropdown-header">Convenio UTN</h6></li>
-					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/carreras/cunt.html" target="blank">Lic. en Biotecnología</a></li>
-					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/carreras/cunt.html" target="blank">Lic. en Química</a></li>
-					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/carreras/cunt.html" target="blank">Bioquímica</a></li>
-					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/carreras/cunt.html" target="blank">Farmacia</a></li>
-					          </ul>
-				        	</li>
-				        	<li class="nav-item me-5"><a class="nav-link" href="#">Noticias</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Contactos</a></li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-       </header>
+    <header data-th-replace="~{/layouts/header :: header}"></header>
        <article>
          <div id="carouselExampleCaptions" class="carousel slide">
 					<div class="carousel-indicators">
@@ -304,53 +239,8 @@
 				  </div>
 			</div>
      </aside>
- 
-     <footer class="pt-lg-5 pt-md-5 pt-sm-5 pt-4">
+     <footer data-th-replace="~{/layouts/footer :: footer}"></footer>
      
-	     <div class="container color-footer">
-	        	<div class="row">
-	        		<div class="col-lg-12 col-md-12 col-sm-12 col-12 mb-md-4 mb-sm-4 mb-4">
-	        		    <div class="row justify-content-around px-4">
-	        		      	<div class="col-lg-4 col-md-5 col-sm-6 col-6 d-flex flex-column">
-			          			<img alt="logo" src="/images/logo-fi-unju-white.png" class="img-fluid">
-			        		     <div class="d-flex align-items-center mt-lg-3">
-			        		       <i class="fa-solid fa-map-location-dot"></i>
-			        		       <p class="mb-0 ms-3">Ítalo Palanca Nº 10</p>
-			        		     </div>
-			        		     <div class="d-flex align-items-center">
-			        		       <i class="fa-solid fa-earth-americas"></i>
-			        		       <p class="mb-0 ms-3">San Salvador de Jujuy - Argentina</p>
-			        		     </div>
-			        		     <div class="d-flex align-items-center">
-			        		       <i class="fa-solid fa-envelope"></i>
-			        		       <a href="mailto:info@fi.unju.edu.ar"><p class="mb-0 ms-3">info@fi.unju.edu.ar</p></a>
-			        		     </div>  
-			        		</div>
-				        	<div class="col-lg-4 col-md-5 col-sm-6 col-6 d-flex flex-column justify-content-center aviso-legal">
-						           <h4>Aviso Legal</h4>
-						           <p class="m-sm-0 m-0"><a href="#terminosCondiciones" class="text-decoration-none">Términos y Condiciones</a></p>
-						           <p><a href="#politicaPrivacidad" class="text-decoration-none">Política de Privacidad</a></p>
-				      		</div>
-	        		   </div>
-		        	</div>
-		         </div>
-		         <div class="row mt-lg-5 text-white p-3 border-top border-2 border-white">
-		            <div class="col-lg-12 col-md-12 col-sm-12 col-12 py-lg-3">
-		               <div class="row justify-content-center px-3">
-			            	 <div class="col-lg-4 col-md-6 col-sm-6 col-6"> 
-				           		<a href="https://github.com/mili-08" class="text-decoration-none"><strong>By Milagro Jaquelina Martinez ❤️</strong> </a>
-				        	</div>
-				        	<div class="col-lg-4 col-md-4 col-sm-6 col-6 text-center">
-					           <span><a href="https://www.instagram.com/" class="icono-footer"><i class="fa-brands fa-instagram"></i></a></span>
-					           <span><a href="https://www.facebook.com/" class="icono-footer"><i class="fa-brands fa-facebook"></i></a></span>
-					           <span><a href="https://www.tiktok.com/es" class="icono-footer"><i class="fa-brands fa-tiktok"></i></a></span>
-			        		</div>
-			        	</div>
-		            </div>
-	        	 </div>
-	        </div>
-     </footer>
-	
 	<script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
