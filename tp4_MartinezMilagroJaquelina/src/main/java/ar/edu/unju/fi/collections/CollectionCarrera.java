@@ -62,14 +62,18 @@ public class CollectionCarrera {
 	
 	
 	public static void changeCarrera(Carrera carrera) {
+		boolean encontrado=false;
 		for(Carrera carre : carreras) {
 			if(carre.getCodigo() == carrera.getCodigo()) {
 				carre.setNombre(carrera.getNombre());
 				carre.setCantAños(carrera.getCantAños());
 				carre.setEstado(carrera.isEstado());
-			}else 
-				System.out.println("No existe el carrera con el codigo" + carrera.getCodigo());
+				encontrado=true;
+				break;	
+			}
 		}
+		if(!encontrado)
+			System.out.println("No existe el carrera con el codigo" + carrera.getCodigo());
 	}
 	
 	/**

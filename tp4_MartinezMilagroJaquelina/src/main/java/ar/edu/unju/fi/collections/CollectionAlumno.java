@@ -63,6 +63,7 @@ public class CollectionAlumno {
 	 */
 	
 	public static void changeAlumno(Alumno alumno) {
+		boolean encontrado=false;
 		for(Alumno alu:alumnos) {
 			if(alu.getLu()==alumno.getLu()) {
 				alu.setApellido(alumno.getApellido());
@@ -72,9 +73,12 @@ public class CollectionAlumno {
 				alu.setEmail(alumno.getEmail());
 				alu.setFechaNac(alu.getFechaNac());
 				alu.setTelefono(alumno.getTelefono());
-			}else 
-				System.out.println("No existe el alumno con esa lu");
+				encontrado=true;
+				break;
+			}	
 		}
+		if(!encontrado)
+			System.out.println("No existe el alumno con la libreta universitaria " + alumno.getLu());
 	}
 	
 	/**

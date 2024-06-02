@@ -52,6 +52,9 @@ public class CollectionDocente {
 				encontrado=true;
 			}
 		}
+		
+		if(!encontrado)
+			System.out.println("No existe docente con ese legajo" + legajo);
 	}
 	
 	/**
