@@ -1,7 +1,11 @@
 package ar.edu.unju.fi.model;
 
+import org.springframework.stereotype.Component;
+
 import ar.edu.unju.fi.constantes.Modalidad;
 
+
+@Component
 public class Materia {
     private Integer codigo;
     private String nombre;
