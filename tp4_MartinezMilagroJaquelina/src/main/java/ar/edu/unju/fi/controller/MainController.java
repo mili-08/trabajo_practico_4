@@ -1,6 +1,7 @@
 package ar.edu.unju.fi.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 
@@ -8,10 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 	
-	@GetMapping({"Inicio", "/"})  //Se utiliza {} para disponer dos path a una misma vista
-	public String getIndex() {
+	@GetMapping("Inicio")  
+	public String getIndexPage(Model model) {
+		model.addAttribute("titulo", "Inicio");
 		return "index";
 	}
-	
-
 }

@@ -1,10 +1,71 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" lang="es">
-<head>
+<head th:fragment="head">
 	<meta charset="UTF-8">
-	<title></title>
+	<title data-th-text="${titulo}"></title>
+	<link th:rel="stylesheet" data-th-href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+	<link th:rel="stylesheet" data-th-href="@{/css/stylesIndex.css}"> 
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
-
+	<header th:fragment="header"  id="header">
+	        <div class="container-fluid py-4" id="#"> 
+		         <div class="row mx-0 justify-content-center">
+		         	  <div class="col-4 col-lg-5 col-sm-5 col-md-4 d-flex justify-content-center align-items-center">
+		           		<a href="#"><img alt="foto-logo-fi" src="/images/logo-fi-unju.png" class="img-logo img-fluid"></a>
+		         	 </div>
+			          <div class="col-4 col-lg-5 col-sm-5 col-md-6 d-flex justify-content-center align-items-center flex-column mt-sm-4">
+			            <img alt="foto-slogan" src="/images/slogan.png" class="img-fluid img-slogan">
+			          </div>
+		        </div>
+	        </div> 
+			<nav class="navbar navbar-expand-lg bg-body-transparent py-lg-2">
+				<div class="container-fluid">
+					<button class="navbar-toggler" type="button"
+						data-bs-toggle="collapse" data-bs-target="#navbarNav"
+						aria-controls="navbarNav" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse justify-content-evenly" id="navbarNav">
+						<ul class="navbar-nav">
+							<li class="nav-item me-5"><a class="nav-link" aria-current="page" href="#">Inicio</a></li>
+							<li class="nav-item me-5"><a class="nav-link" href="#">Acerca de</a></li>
+							<li class="nav-item dropdown me-5">
+					          <a class="nav-link dropdown-toggle" href="#Carreras" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					            Carreras
+					          </a> 
+					          <ul class="dropdown-menu">
+					            <li><h6 class="dropdown-header">Carreras de Grado</h6></li>
+					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/perfil-y-alcance-ing-quimica" target="blank">Ing. Química</a></li>
+					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/perfil-y-alcance-ing-de-minas" target="blank">Ing. de Minas</a></li>
+					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/perfil-y-alcance-ing-industrial" target="blank">Ing. Industrial</a></li>
+					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/perfil-y-alcance-ing-informatica" target="blank">Ing. Informática</a></li>
+					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/perfil-y-alcance-lic-en-sistemas" target="blank">Lic. en Sistemas</a></li>
+					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/perfil-y-alcance-lic-en-tecn-de-los-alimentos" target="blank">Lic. en Tecnología de Alimentos</a></li>
+					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/perfil-y-alcance-lic-en-cs-geologicas" target="blank">Lic. en Ciencias Geológicas</a></li>
+					            <li><hr class="dropdown-divider"></li>
+					            <li><h6 class="dropdown-header">Carreras de Pre-Grado</h6></li>
+					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/perfil-y-alcance-analista-programador-universitario" target="blank">Analista Programador Univ.</a></li>
+					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/tecnicatura-universitaria-en-div" target="blank">Tec. Univ. en Diseño Integral de Videojuegos</a></li>
+					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/perfil-y-alcance-tec-univ-en-perforaciones" target="blank">Tec. Univ. en Perforaciones</a></li>
+					          	<li><hr class="dropdown-divider"></li>
+					          	<li><h6 class="dropdown-header">Convenio UTN</h6></li>
+					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/carreras/cunt.html" target="blank">Lic. en Biotecnología</a></li>
+					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/carreras/cunt.html" target="blank">Lic. en Química</a></li>
+					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/carreras/cunt.html" target="blank">Bioquímica</a></li>
+					            <li><a class="dropdown-item" href="https://www.fi.unju.edu.ar/carreras/cunt.html" target="blank">Farmacia</a></li>
+					          </ul>
+				        	</li>
+				        	<li class="nav-item me-5"><a class="nav-link" href="#">Noticias</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Contactos</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+	</header>
 </body>
 </html>
