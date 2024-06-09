@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="es">
+   <head data-th-replace="~{/layouts/header :: head}"></head>
+<body>
+    <header data-th-replace="~{/layouts/header :: header}"></header>
+    <div class="container">
+    
+    <div class="row py-5">
+   
+	     <div class="row mb-5">
+	       <h3 class="text-center" data-th-text="${edicion}?'Modificar Alumno' : 'Iniciar Secion'"></h3>
+	     </div>
+	     <div class="row">
+	   
+		     	<form data-th-action="${edicion}? @{/alumno/modificar} : @{/alumno/guardar}" th:object="${alumno}" method="post">
+					  <div class="row mb-3 justify-content-center">
+						    <div class="col-sm-12 col-lg-4">
+							    <label for="libreta" class="form-label">Libreta Universitaria</label>
+							    <input type="number" class="form-control" id="libreta" placeholder="Libreta universitaria" th:field="*{lu}" th:disabled="${edicion}" required>
+							    <input type="hidden" th:field="*{lu}" th:if="${edicion}">
+							</div>
+
+					  </div>
+					  <div class="row mb-3 justify-content-center">
+					    <div class="col-sm-12 col-lg-4">
+					         <label for="nombre" class="form-label">Nombre</label>
+					      	<input type="text" placeholder="Nombre" class="form-control" id="nombre" th:field="*{nombre}" required>
+					    </div>
+					  </div>
+					  <div class="row mb-3 justify-content-center">
+					    <div class="col-sm-12 col-lg-4">
+					         <label for="apellido" class="form-label">Apellido</label>
+					      	<input type="text" placeholder="Apellido" class="form-control" id="apellido" th:field="*{apellido}" required>
+					    </div>
+					  </div>
+					  <div class="row mb-3 justify-content-center">
+					    <div class="col-sm-12 col-lg-4">
+					         <label for="dni" class="form-label">DNI</label>
+					      	<input type="number" placeholder="DNI" class="form-control" id="dni" th:field="*{dni}" required>
+					    </div>
+					  </div>
+					  <div class="row mb-3 justify-content-center">
+					    <div class="col-sm-12 col-lg-4">
+					         <label for="email" class="form-label">Email</label>
+					      	<input type="email" placeholder="E-mail" class="form-control" id="email" th:field="*{email}" required>
+					    </div>
+					  </div>
+					  <div class="row mb-3 justify-content-center">
+					    <div class="col-sm-12 col-lg-4">
+					         <label for="telefono" class="form-label">Telefono</label>
+					      	<input type="number" placeholder="Telefono" class="form-control" id="telefono" th:field="*{telefono}" required>
+					    </div>
+					  </div>
+					  <div class="row mb-3 justify-content-center">
+					    <div class="col-sm-12 col-lg-4">
+					         <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento</label>
+					      	<input type="date" class="form-control" id="fechaNacimiento" th:field="*{fechaNac}" required>
+					    </div>
+					  </div>
+					  <div class="row mb-3 justify-content-center">
+					    <div class="col-sm-12 col-lg-4">
+					         <label for="domicilio" class="form-label">Domicilio</label>
+					      	<input type="text" placeholder="Domicilio" class="form-control" id="domicilio" th:field="*{domicilio}" required>
+					    </div>
+					  </div>
+					  
+					 <div class="row mb-3 justify-content-center">
+					    <div class="col-sm-12 col-lg-4 d-flex justify-content-center">
+					      <button type="submit" class="btn btn-primary" data-th-text="${edicion}?'Modificar':'Guardar'"></button>
+					    </div>
+					 </div>
+				</form>
+            </div>
+     </div>
+    </div>
+     <footer data-th-replace="~{/layouts/footer ::  footer}"></footer>
+     <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
