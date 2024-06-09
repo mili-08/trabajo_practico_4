@@ -8,7 +8,6 @@ import java.util.function.Predicate;
 
 import org.springframework.stereotype.Component;
 
-import ar.edu.unju.fi.constantes.Modalidad;
 import ar.edu.unju.fi.model.Carrera;
 import ar.edu.unju.fi.model.Docente;
 import ar.edu.unju.fi.model.Materia;
@@ -25,9 +24,9 @@ public class CollectionMateria {
 
 	public static List<Materia> getMaterias() {
 		if(materias.isEmpty()) {
-			materias.add(new Materia(1, "Programación Visual", "cuatrimestral", 6, Modalidad.VIRTUAL, new Docente(1, "Rebeca Patricia", "Armstrong", "rebecapatricia12@gmail.com", "3886234123"), new Carrera(1, "APU", 3, true)));
-			materias.add(new Materia(2, "Base de Datos", "cuatrimestral", 6, Modalidad.VIRTUAL, new Docente(2, "Martina", "Armeya", "martinaarmeya145@gmail.com", "3884678123"), new Carrera(1, "APU", 3, true)));
-			materias.add(new Materia(3, "Analisis Matematico", "anual", 6, Modalidad.PRESENCIAL, new Docente(3, "Roberto Martin", "Bautista", "martinbautista78@gmail.com", "3884678987"), new Carrera(2, "Ing. Informatica", 5, false)));
+			materias.add(new Materia(1, "Programación Visual", "cuatrimestral", 6,"VIRTUAL", new Docente(1, "Rebeca Patricia", "Armstrong", "rebecapatricia12@gmail.com", "3886234123"), new Carrera(1, "APU", 3, true)));
+			materias.add(new Materia(2, "Base de Datos", "cuatrimestral", 6,"VIRTUAL", new Docente(2, "Martina", "Armeya", "martinaarmeya145@gmail.com", "3884678123"), new Carrera(1, "APU", 3, true)));
+			materias.add(new Materia(3, "Analisis Matematico", "anual", 6,"PRESENCIAL", new Docente(3, "Roberto Martin", "Bautista", "martinbautista78@gmail.com", "3884678987"), new Carrera(2, "Ing. Informatica", 5, false)));
 		}
 		return materias;
 	}
