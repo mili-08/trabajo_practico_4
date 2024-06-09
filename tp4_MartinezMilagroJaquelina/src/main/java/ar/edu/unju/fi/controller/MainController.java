@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
 	
-	@GetMapping("Inicio")  
+	@GetMapping("/inicio")  
 	public String getIndexPage(Model model) {
 		model.addAttribute("titulo", "Inicio");
 		return "index";
