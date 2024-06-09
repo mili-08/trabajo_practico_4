@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="es">
+   <head data-th-replace="~{/layouts/header :: head}"></head>
+<body>
+	<header data-th-replace="~{/layouts/header :: header}"></header>
+	  <div class="container">
+		    <div class="row py-5">
+		   
+			     <div class="row mb-5">
+			       <h3 class="text-center" data-th-text="${edicion}?'Modificar Docente' : 'Nueva Docente'"></h3>
+			     </div>
+			     <div class="row">
+			   
+				     	<form data-th-action="${edicion}? @{/docente/modificar} : @{/docente/guardar}" th:object="${docente}" method="post">
+							  <div class="row mb-3 justify-content-center">
+								    <div class="col-sm-12 col-lg-4">
+									    <label for="legajo" class="form-label">Legajo</label>
+									    <input type="number" class="form-control" id="codigo" placeholder="Legajo" th:field="*{legajo}" th:disabled="${edicion}" required>
+									    <input type="hidden" th:field="*{legajo}" th:if="${edicion}">
+									</div>
+		
+							  </div>
+							  <div class="row mb-3 justify-content-center">
+							    <div class="col-sm-12 col-lg-4">
+							         <label for="nombre" class="form-label">Nombre</label>
+							      	<input type="text" placeholder="Nombre" class="form-control" id="nombre" th:field="*{nombre}" required>
+							    </div>
+							  </div>
+							   <div class="row mb-3 justify-content-center">
+							    <div class="col-sm-12 col-lg-4">
+							         <label for="apellido" class="form-label">Apellido</label>
+							      	<input type="text" placeholder="Apellido" class="form-control" id="apellido" th:field="*{apellido}" required>
+							    </div>
+							  </div>
+							   <div class="row mb-3 justify-content-center">
+							    <div class="col-sm-12 col-lg-4">
+							         <label for="email" class="form-label">E-mail</label>
+							      	<input type="email" placeholder="Correo Electronico" class="form-control" id="email" th:field="*{email}" required>
+							    </div>
+							  </div>
+							  <div class="row mb-3 justify-content-center">
+							    <div class="col-sm-12 col-lg-4">
+							    	<label for="telefono" class="form-label">Telefono</label>
+							    	<input type="number" placeholder="Telefono" class="form-control" id="telefono" th:field="*{telefono}" required>
+							    </div>
+							  </div>
+							 <div class="row mb-3 justify-content-center">
+							    <div class="col-sm-12 col-lg-4 d-flex justify-content-center">
+							      <button type="submit" class="btn btn-primary" data-th-text="${edicion}?'Modificar':'Guardar'"></button>
+							    </div>
+							 </div>
+						</form>
+		            </div>
+		     </div>
+		    </div>
+		
+	<footer data-th-replace="~{/layouts/footer ::  footer}"></footer>
+    <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
