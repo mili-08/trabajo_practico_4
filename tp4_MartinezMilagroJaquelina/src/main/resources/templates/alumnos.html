@@ -39,9 +39,9 @@
 							    <tr data-th-each="alumno:${alumnos}">
 							      <th scope="row" data-th-text="${alumno.lu}"></th>
 							      <td class="text-start" data-th-text="${alumno.apellido} + ', '+ ${alumno.nombre}"></td>
+							      <td class="text-start" data-th-text="${alumno.fechaNac}"></td>
 							      <td class="text-start" data-th-text="${alumno.email}"></td>
 							      <td class="text-start" data-th-text="${alumno.telefono}"></td>
-							      <td class="text-start" data-th-text="${alumno.domicilio}"></td>
 							      <td>
 							              <div class="row justify-content-center">
 							               <div class="col col-5">
