@@ -60,7 +60,14 @@ public class MateriaController {
 		materia.setCarrera(carrera);
 		docente = CollectionDocente.searchDocente(materia.getDocente().getLegajo());
 		materia.setDocente(docente);
-		CollectionMateria.addMateria(materia);
+		String mensaje="";
+		boolean exito = CollectionMateria.addMateria(materia);
+		if(exito) 
+			mensaje="Materia guardada exitosamente !!";
+		else 
+			mensaje="Materia no se guardo exitosamente";
+		modelView.addObject("exito", exito);
+		modelView.addObject("mensaje", mensaje);
 		modelView.addObject("materias", CollectionMateria.getMaterias());
 		return modelView;
 	}
@@ -81,13 +88,26 @@ public class MateriaController {
 	
 	
    @PostMapping("/modificar")
-   public String modificarMateria(@ModelAttribute("materia") Materia materia) {
+   public String modificarMateria(@ModelAttribute("materia") Materia materia, Model model) {
+	boolean exito=false;
+   	String mensaje="";
 	carrera = CollectionCarrera.searchCarrera(materia.getCarrera().getCodigo());
 	docente = CollectionDocente.searchDocente(materia.getDocente().getLegajo());
 	materia.setCarrera(carrera);
 	materia.setDocente(docente);
-	CollectionMateria.changeMateria(materia);
-   	return "redirect:/materia/listado";
+	try {
+		CollectionMateria.changeMateria(materia);
+		mensaje="La Materia con codigo " + materia.getCodigo() + " fue modificada exitosamente";
+		exito=true;
+	} catch (Exception e) {
+		mensaje=e.getMessage();
+		e.printStackTrace();
+	}
+	model.addAttribute("mensaje", mensaje);
+	model.addAttribute("exito", exito);
+	model.addAttribute("materias", CollectionMateria.getMaterias());
+	model.addAttribute("titulo", "Materias");
+   	return "materias";
    }
 
    @GetMapping("/eliminar/{codigo}")
