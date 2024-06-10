@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="es">
+   <head data-th-replace="~{/layouts/header :: head}"></head>
+<body>
+    <header data-th-replace="~{/layouts/header :: header}"></header>
+    <div class="container">
+    
+    <div class="row py-5">
+   
+	     <div class="row mb-5">
+	       <h3 class="text-center" data-th-text="${edicion}?'Modificar Materia' : 'Nueva Materia'"></h3>
+	     </div>
+	     <div class="row">
+	   
+		     	<form data-th-action="${edicion}? @{/materia/modificar} : @{/materia/guardar}" th:object="${materia}" method="post">
+					  <div class="row mb-3 justify-content-center">
+						    <div class="col-sm-12 col-lg-4">
+							    <label for="codigo" class="form-label">Codigo</label>
+							    <input type="number" class="form-control" id="codigo" placeholder="Codigo" th:field="*{codigo}" th:disabled="${edicion}" required>
+							    <input type="hidden" th:field="*{codigo}" th:if="${edicion}">
+							</div>
+
+					  </div>
+					  <div class="row mb-3 justify-content-center">
+					    <div class="col-sm-12 col-lg-4">
+					         <label for="nombre" class="form-label">Nombre</label>
+					      	<input type="text" placeholder="Nombre" class="form-control" id="nombre" th:field="*{nombre}" required>
+					    </div>
+					  </div>
+					  <div class="row mb-3 justify-content-center">
+					     <div class="col-sm-12 col-lg-4">
+						      <label for="curso" class="curso col-md-2 text-center col-form-label">Curso</label>
+							  <select th:field="*{curso}" class="form-control" id="curso" required>
+							    <option value="" disabled selected>Seleccione una opción</option>
+							    <option value="PRIMERO">Primero</option>
+							    <option value="SEGUNDO">Segundo</option>
+							    <option value="TERCERO">Tercero</option>
+							    <option value="CUARTO">Cuarto</option>
+							    <option value="QUINTO">Quinto</option>
+							  </select>
+						</div>
+					  </div>
+					  <div class="row mb-3 justify-content-center">
+					    <div class="col-sm-12 col-lg-4">
+					    	<label for="horasSemales" class="form-label">Horas Semanales</label>
+					    	<input type="number" placeholder="Cantidad de horas semanales" class="form-control" id="horasSemales" th:field="*{cantHoras}" required>
+					    </div>
+					  </div>
+					  <div class="row mb-3 justify-content-center">
+					     <div class="col-sm-12 col-lg-4">
+						      <label for="modalidad" class="curso col-md-2 text-center col-form-label">Modalidad</label>
+							  <select th:field="*{modalidad}" class="form-control" id="modalidad" required>
+							    <option value="" disabled selected>Seleccione una opción</option>
+							    <option value="PRESENCIAL">Presencial</option>
+							    <option value="VIRTUAL">Virtual</option>
+							    <option value="MIXTA">Mixta</option>
+							  </select>
+						</div>
+					  </div>
+					  <div class="row mb-3 justify-content-center">
+				            <div class="col-sm-12 col-lg-4">
+				                <label for="carrera" class="curso col-md-2 text-center col-form-label">Carrera</label>
+				                <select th:field="*{carrera.codigo}" class="form-control" id="carrera" required>
+				                    <option value="" disabled>Elegí una opción</option>
+				                    <option th:each="carrera : ${carreras}" th:value="${carrera.codigo}" th:text="${carrera.nombre}"></option>
+				                </select>
+				            </div>
+				        </div>
+
+					  <div class="row mb-3 justify-content-center">
+					     <div class="col-sm-12 col-lg-4">
+						      <label for="docente" class="curso col-md-2 text-center col-form-label">Docente</label>
+							  <select th:field="*{docente.legajo}" class="form-control" id="docente" required>
+							    <option value="" disabled selected>Seleccione una opcion</option>
+							    <option th:each="docente : ${docentes}" th:value="${docente.legajo}" th:text="${docente.apellido} + ', ' + ${docente.nombre}"></option>
+							  </select>
+						</div>
+					  </div>
+					 <div class="row mb-3 justify-content-center">
+					    <div class="col-sm-12 col-lg-4 d-flex justify-content-center">
+					      <button type="submit" class="btn btn-primary" data-th-text="${edicion}?'Modificar':'Guardar'"></button>
+					    </div>
+					 </div>
+				</form>
+            </div>
+     </div>
+    </div>
+     <footer data-th-replace="~{/layouts/footer ::  footer}"></footer>
+     <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
