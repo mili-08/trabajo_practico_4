@@ -44,7 +44,14 @@ public class DocenteController {
 	@PostMapping("/guardar")
 	public ModelAndView guardarDocente(@ModelAttribute ("docente") Docente docente) {
 		ModelAndView modelView = new ModelAndView("docentes");
-		CollectionDocente.addDocente(docente);
+		String mensaje="";
+		boolean exito = CollectionDocente.addDocente(docente);
+		if(exito) 
+			mensaje="Docente guardado exitosamente !!";
+		else 
+			mensaje="Docente no se guardo exitosamente";
+		modelView.addObject("exito", exito);
+		modelView.addObject("mensaje", mensaje);
 		modelView.addObject("docentes", CollectionDocente.getDocentes());
 		return modelView;
 	}
@@ -63,9 +70,22 @@ public class DocenteController {
 	
 	
     @PostMapping("/modificar")
-    public String modificarDocente(@ModelAttribute("docente") Docente docente) {
-    	CollectionDocente.changeDocente(docente);
-    	return "redirect:/docente/listado";
+    public String modificarDocente(@ModelAttribute("docente") Docente docente, Model model) {
+    	boolean exito=false;
+    	String mensaje="";
+    	try {
+    		CollectionDocente.changeDocente(docente);
+    		mensaje="La carrera con codigo " + docente.getLegajo() + " fue modificada exitosamente";
+    		exito=true;
+		} catch (Exception e) {
+			mensaje=e.getMessage();
+			e.printStackTrace();
+		}
+     	model.addAttribute("mensaje", mensaje);
+    	model.addAttribute("exito", exito);
+    	model.addAttribute("docentes", CollectionDocente.getDocentes());
+		model.addAttribute("titulo", "Docentes");
+    	return "docentes";
     }
 
     @GetMapping("/eliminar/{legajo}")

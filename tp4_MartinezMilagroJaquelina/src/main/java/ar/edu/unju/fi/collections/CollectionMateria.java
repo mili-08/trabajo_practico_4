@@ -37,8 +37,8 @@ public class CollectionMateria {
 	 * @param materia
 	 */
 	
-	public static void addMateria(Materia materia) {
-		materias.add(materia);
+	public static boolean addMateria(Materia materia) {
+		return materias.add(materia) ? true : false;
 	}
 	
 	/**
@@ -66,23 +66,29 @@ public class CollectionMateria {
 	 * @param materia
 	 */
 	
-	public static void changeMateria(Materia materia) {
+	public static void changeMateria(Materia materia) throws Exception {
 		boolean encontrado=false;
-		for(Materia mate: materias) {
-			if(mate.getCodigo()== materia.getCodigo()) {
-				mate.setCantHoras(materia.getCantHoras());
-				mate.setCarrera(materia.getCarrera());
-				mate.setCurso(materia.getCurso());
-				mate.setDocente(materia.getDocente());
-				mate.setModalidad(materia.getModalidad());
-				mate.setNombre(materia.getNombre());
-				encontrado=true;
-				break;
+		try {
+			for(Materia mate: materias) {
+				
+				if(mate.getCodigo()== materia.getCodigo()) {
+					mate.setCantHoras(materia.getCantHoras());
+					mate.setCarrera(materia.getCarrera());
+					mate.setCurso(materia.getCurso());
+					mate.setDocente(materia.getDocente());
+					mate.setModalidad(materia.getModalidad());
+					mate.setNombre(materia.getNombre());
+					encontrado=true;
+					break;
+				}
 			}
+			if(!encontrado)
+				throw new Exception ("No eiste materia con el codigo " + materia.getCodigo());
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			throw e;
 		}
 		
-		if(!encontrado)
-			System.out.println("No eiste materia con el codigo " + materia.getCodigo());
 	}
 	
 	/**

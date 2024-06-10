@@ -44,13 +44,18 @@ public class AlumnoController {
 	@PostMapping("/guardar")
 	public ModelAndView guardarAlumno(@ModelAttribute ("alumno") Alumno alumno) {
 		ModelAndView modelView = new ModelAndView("alumnos");
-		/*carrera.setEstado(true);*/
-		CollectionAlumno.addAlumno(alumno);
+		String mensaje="";
+		boolean exito = CollectionAlumno.addAlumno(alumno);
+		if(exito) 
+			mensaje="Alumno guardado exitosamente !!";
+		else 
+			mensaje="Alumno no se guardo exitosamente";
+		modelView.addObject("mensaje", mensaje);
+		modelView.addObject("exito", exito);
 		modelView.addObject("alumnos", CollectionAlumno.getAlumnos());
 		return modelView;
 	}
 	
-	//creo que el codigo es la lu
 	@GetMapping("/modificar/{lu}")
 	public String modificarAlumnoPage(Model model, @PathVariable(value="lu") int lu) {
 		Alumno alumnoEncontrado = new Alumno();
@@ -64,9 +69,22 @@ public class AlumnoController {
 	
 	
    @PostMapping("/modificar")
-   public String modificarAlumno(@ModelAttribute("alumno") Alumno alumno) {
-	CollectionAlumno.changeAlumno(alumno);
-   	return "redirect:/alumno/listado";
+   public String modificarAlumno(@ModelAttribute("alumno") Alumno alumno, Model model) {
+	   boolean exito=false;
+   	  String mensaje="";
+	 try {
+		  CollectionAlumno.changeAlumno(alumno);
+		  mensaje="La alumno con LU " + alumno.getLu() + " fue modificado exitosamente";
+  		 exito=true;
+	} catch (Exception e) {
+		mensaje=e.getMessage();
+		e.printStackTrace();
+	}
+	model.addAttribute("mensaje", mensaje);
+	model.addAttribute("exito", exito);
+	model.addAttribute("alumnos", CollectionAlumno.getAlumnos());
+	model.addAttribute("titulo", "Alumnos");
+   	return "alumnos";
    }
 
    @GetMapping("/eliminar/{lu}")
